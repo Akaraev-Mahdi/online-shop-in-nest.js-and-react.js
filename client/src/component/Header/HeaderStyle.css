@@ -1,0 +1,84 @@
+body {
+    font-family: "Kanit", serif;
+    background-color: #1B1B1B;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.login-btn {
+    text-decoration: none;
+    color: white;
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    padding: 8px 15px;
+    margin-right: 50px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.profile {
+    cursor: pointer;
+    display: flex;
+}
+
+.profile_info {
+    width: 130px;
+    padding: 10px 15px;
+    background-color: #111010;
+    border-radius: 5px;
+    color: white;
+    position: absolute;
+    margin-top: 50px;
+}
+
+.profile_info_cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile_info_cart a {
+    text-decoration: none;
+    color: white;
+}
+
+.profile_info_cart_notify {
+    background-color: #d40a0a;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.notify {
+    color: #ffffff;
+    background-color: #d40a0a;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 25px;
+}

@@ -1,0 +1,45 @@
+.filters-section {
+    display: flex;
+    padding: 40px 30px;
+}
+
+.filter {
+    padding-right: 30px;
+}
+
+.filter-btn {
+    display: flex;
+    justify-content: space-around;
+    background-color: #111010;
+    color: white;
+    width: max-content;
+    border-radius: 3px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.filters-item {
+    display: grid;
+    width: 200px;
+    background-color: #111010;
+    border-radius: 3px;
+    color: white;
+    position: absolute;
+    margin-top: 10px;
+    visibility: hidden;
+}
+
+.filters-item.show {
+    visibility: visible;
+}
+
+.items {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 15px;
+}
+
+.arrow-icon {
+    width: max-content;
+    margin-left: 7px;
+}

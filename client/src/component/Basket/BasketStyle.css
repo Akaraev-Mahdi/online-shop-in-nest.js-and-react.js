@@ -1,0 +1,101 @@
+.basket-item {
+    display: flex;
+    padding: 20px 30px;
+}
+
+.basket-info {
+    display: grid;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+.basket-params {
+    color: white;
+    background-color: #111010;
+    overflow-y: scroll;
+    border-radius: 10px;
+    width: max-content;
+    height: 104px;
+}
+
+.basket-params::-webkit-scrollbar {
+    width: 10px;
+}
+
+.basket-params::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+}
+
+.basket-param {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.basket-title {
+    padding-right: 30px;
+}
+
+.basket-page-title {
+    color: white;
+    font-size: larger;
+    padding-top: 40px;
+    padding-left: 30px;
+}
+
+.basket-page-title span {
+    color: #636060;
+    font-size: small;
+    padding-left: 20px;
+}
+
+.basket-page-img {
+    width: 140px;
+    height: 175px;
+    background-color: #111010;
+    border-radius: 10px;
+    color: #636060;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket-device-info {
+    color: #636060;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.basket-device-info span {
+    padding-left: 40px;
+    font-size: medium;
+    font-weight: 500;
+    color: white;
+}
+
+.basket-page-cart-btn {
+    background-color: #111010;
+    color: white;
+    border-radius: 10px;
+    width: max-content;
+    height: 33px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.basket-page-cart-icon {
+    padding-left: 10px;
+    height: 19px;
+    width: 19px;
+}
+
+.warning-note-basket {
+    padding: 20px 30px;
+    color: #c30f0f;
+}

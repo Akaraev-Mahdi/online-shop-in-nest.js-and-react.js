@@ -1,0 +1,63 @@
+.DevicePage{
+    padding: 20px 30px;
+}
+
+.upper-base-container {
+    display: flex;
+}
+
+.lower-base-container {
+    display: grid;
+    padding-left: 20px;
+}
+
+.device-page-img {
+    width: 140px;
+    height: 175px;
+    border-radius: 10px;
+}
+
+.base-info {
+    color: #636060;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.base-info span {
+    font-size: medium;
+    font-weight: 500;
+    color: white;
+}
+
+.device-page-cart-btn {
+    background-color: #111010;
+    color: white;
+    border-radius: 10px;
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 8px;
+    margin-top: 80px;
+}
+
+.device-page-cart-icon {
+    padding-left: 10px;
+    height: 19px;
+    width: 19px;
+}
+
+.param {
+    background-color: #111010;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 596px;
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
