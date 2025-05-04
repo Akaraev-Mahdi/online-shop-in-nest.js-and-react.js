@@ -1,18 +1,26 @@
-import { FC } from 'react'
+import React from 'react'
 import { FiltersProps } from '../../store/filtersSlice'
 import { useAppDispatch, useAppSelector } from "../../hooks"
 import { changeFilter } from "../../store/filtersSlice";
 
-const TypeItem: FC<FiltersProps> = ({name, id}) => {
+export default React.memo(function TypeItem ({name, id}: FiltersProps) {
 
     const { Filter, checkedFilter } = useAppSelector(state => state.filters)
     const dispatch = useAppDispatch();
 
     const changeType = (e: boolean) => {
         if(e){
-            dispatch(changeFilter({typeId: id, brandId: Filter.brandId, page: Filter.page}))
+            dispatch(changeFilter({
+                typeId: id, 
+                brandId: Filter.brandId, 
+                page: Filter.page
+            }))
         } else {
-            dispatch(changeFilter({typeId: '', brandId: Filter.brandId, page: Filter.page}))
+            dispatch(changeFilter({
+                typeId: '', 
+                brandId: Filter.brandId, 
+                page: Filter.page
+            }))
         }
     }
 
@@ -22,6 +30,4 @@ const TypeItem: FC<FiltersProps> = ({name, id}) => {
             <span>{name}</span>
         </div>
     )
-}
-  
-export default TypeItem
+})

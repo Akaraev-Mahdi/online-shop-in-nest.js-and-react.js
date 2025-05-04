@@ -14,7 +14,7 @@ export type DeviceProps = {
     img: string,
     price: number,
     brand: FiltersProps,
-    type?: FiltersProps,
+    type: FiltersProps,
     device_info: deviceInfoProps[]
 }
 

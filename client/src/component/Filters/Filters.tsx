@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import React, { useState } from 'react'
 import './FiltersStyle.css'
 import arrow from '../../public/icons8-arrow-24.png'
 import { useAppDispatch, useAppSelector } from '../../hooks'
@@ -6,9 +6,9 @@ import { changeFilter } from "../../store/filtersSlice";
 import TypeItems from './TypeItems'
 import BrandItems from './BrandItem'
 
-const Filters: FC = () => {
+export default React.memo(function Filters() {
 
-    const {Filters, Filter, status} = useAppSelector(state => state.filters)
+    const {Filters, Filter} = useAppSelector(state => state.filters)
     const dispatch = useAppDispatch();
 
     const [open, setOpen] = useState<string>('')
@@ -19,13 +19,6 @@ const Filters: FC = () => {
         } else {
             setOpen('')
         }
-    }
-
-    if(status === "loading"){
-        return (
-            <>
-            </>
-        )
     }
 
     return (
@@ -55,6 +48,4 @@ const Filters: FC = () => {
         </div>
     </div>
     )
-}
-  
-export default Filters
+})

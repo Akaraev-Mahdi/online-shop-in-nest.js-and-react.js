@@ -25,12 +25,12 @@ export const fetchBasket = createAsyncThunk<BasketProps[]>(
     }
 )
 
-export const addOneDevice = createAsyncThunk<number, number>(
+export const addOneDevice = createAsyncThunk<DeviceProps, DeviceProps>(
     'Basket/addOneDevice',
-    async function (id, {rejectWithValue}) {
+    async function (device, {rejectWithValue}) {
         try {
-            await axiosHost.post(`/basket?DeviceId=${id}`)
-            return id
+            await axiosHost.post(`/basket?DeviceId=${device.id}`)
+            return device
         } catch (error: any) {
             return rejectWithValue(error.response.data.message)
         }
@@ -58,29 +58,23 @@ export const basketSlice = createSlice({
         builder
         .addCase(fetchBasket.fulfilled, (state, action) => {
             state.Basket = action.payload
+            state.error = 'fulfilled'
         })
         .addCase(deleteDevice.fulfilled, (state, action) => {
             state.Basket = state.Basket.filter(basket => basket.deviceId !== action.payload);
         })
         .addCase(addOneDevice.fulfilled, (state, action) => {
+            const device = action.payload
             state.Basket.push({
                 id: 0,
-                deviceId: action.payload,
-                device: {
-                    id: 0,
-                    name: '',
-                    img: '',
-                    price: 0,
-                    brand: {
-                        id: 0,
-                        name: ''
-                    },
-                    device_info: []
-                }
+                deviceId: device.id,
+                device: device
             })
+            state.error = 'fulfilled'
         })
         .addCase(addOneDevice.rejected, (state, action) => {
             state.error = action.payload
+            state.Basket = []
         })
     }
 })

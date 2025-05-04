@@ -1,20 +1,12 @@
 import { FC } from 'react'
 import cart from '../../public/icons8-cart-30.png'
 import trash from '../../public/icons8-trash-24.png'
-import { FiltersProps } from '../../store/filtersSlice'
+import { DeviceProps } from '../../store/devicesSlice'
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../hooks'
 import { addOneDevice, deleteDevice } from '../../store/basketSlice'
 
-type DevicesProps = {
-    id: number,
-    name: string,
-    img: string,
-    price: number,
-    brand: FiltersProps
-}
-
-const DevicesItems: FC<DevicesProps> = ({id, img, name, price, brand}) => {
+const DevicesItems: FC<DeviceProps> = ({id, img, name, price, brand, type, device_info}) => {
 
     const {Basket} = useAppSelector(state => state.basket)
     const inBasket = Basket.some(basket => basket.deviceId === id)
@@ -24,7 +16,8 @@ const DevicesItems: FC<DevicesProps> = ({id, img, name, price, brand}) => {
     let navigate = useNavigate()
 
     const addDeviceFromBasket = () => {
-        dispatch(addOneDevice(id))
+        const device = {id, img, name, price, brand, type, device_info}
+        dispatch(addOneDevice(device))
     }
 
     const deleteFromDevice = () => {

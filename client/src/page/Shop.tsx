@@ -9,7 +9,7 @@ import { fetchBasket } from '../store/basketSlice';
 
 const Shop: FC = () => {
 
-  const filter = useAppSelector(state => state.filters.Filter);
+  const filter = useAppSelector(state => state.filters.Filter)
   const {error} = useAppSelector(state => state.basket)
 
   const dispatch = useAppDispatch();
@@ -17,17 +17,17 @@ const Shop: FC = () => {
   useEffect(() => {
     dispatch(fetchFilters())
     dispatch(fetchBasket())
-  }, []);
+  }, [])
 
   useEffect(() => {
-    dispatch(fetchDevice(filter));
-  }, [filter]);
+    dispatch(fetchDevice(filter))
+  }, [filter])
 
   return (
     <>
       <Filters/>
       <Devices/>
-      {error !== null ? <div className="warning-note-basket">{error}</div> : ""}
+      {error !== 'fulfilled' ? <div className="warning-note-basket">{error}</div> : ""}
       <Pages/>
     </>
   )

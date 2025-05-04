@@ -18,6 +18,7 @@ header {
 
 .logo {
     text-decoration: none;
+    cursor: pointer;
     color: white;
     font-size: 30px;
     font-weight: 500;
@@ -30,6 +31,7 @@ header {
     border-radius: 10px;
     padding: 8px 15px;
     margin-right: 50px;
+    cursor: pointer;
 }
 
 .profile-icon {
@@ -60,6 +62,7 @@ header {
 
 .profile_info_cart a {
     text-decoration: none;
+    cursor: pointer;
     color: white;
 }
 
