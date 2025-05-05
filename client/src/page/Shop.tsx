@@ -9,7 +9,7 @@ import { fetchBasket } from '../store/basketSlice';
 
 const Shop: FC = () => {
 
-  const filter = useAppSelector(state => state.filters.Filter)
+  const filter = useAppSelector(state => state.filters.setFilter)
   const {error} = useAppSelector(state => state.basket)
 
   const dispatch = useAppDispatch();

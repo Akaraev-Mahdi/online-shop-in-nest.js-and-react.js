@@ -5,21 +5,21 @@ import { changeFilter } from "../../store/filtersSlice";
 
 export default React.memo(function TypeItem ({name, id}: FiltersProps) {
 
-    const { Filter, checkedFilter } = useAppSelector(state => state.filters)
+    const { setFilter, checkedFilter } = useAppSelector(state => state.filters)
     const dispatch = useAppDispatch();
 
     const changeType = (e: boolean) => {
         if(e){
             dispatch(changeFilter({
                 typeId: id, 
-                brandId: Filter.brandId, 
-                page: Filter.page
+                brandId: setFilter.brandId, 
+                page: setFilter.page
             }))
         } else {
             dispatch(changeFilter({
                 typeId: '', 
-                brandId: Filter.brandId, 
-                page: Filter.page
+                brandId: setFilter.brandId, 
+                page: setFilter.page
             }))
         }
     }

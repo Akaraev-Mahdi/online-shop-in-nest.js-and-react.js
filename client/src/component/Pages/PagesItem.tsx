@@ -8,7 +8,7 @@ type PageProps = {
 
 const PagesItem: FC<PageProps> = (props: {page: number}) => {
 
-  const filter = useAppSelector(state => state.filters.Filter)
+  const filter = useAppSelector(state => state.filters.setFilter)
   const dispatch = useAppDispatch();
 
   const switchPage = () => {

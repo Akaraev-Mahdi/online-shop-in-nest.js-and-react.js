@@ -22,7 +22,7 @@ export interface typesStoreState {
         type: FiltersProps[],
         brand: FiltersProps[]
     }
-    Filter: ChangeFilterProps,
+    setFilter: ChangeFilterProps,
     checkedFilter: checkedFilterProps,
     status: string
 }
@@ -45,7 +45,7 @@ const initialState: typesStoreState = {
         type: [],
         brand: []
     },
-    Filter: {
+    setFilter: {
         typeId: '',
         brandId: '',
         page: 1
@@ -63,7 +63,7 @@ export const filtersSlice = createSlice({
     reducers: {
         changeFilter: (state, action) => {
             let filter: ChangeFilterProps = action.payload
-            state.Filter = filter
+            state.setFilter = filter
 
             state.checkedFilter.type = filter.typeId
             state.checkedFilter.brand = filter.brandId

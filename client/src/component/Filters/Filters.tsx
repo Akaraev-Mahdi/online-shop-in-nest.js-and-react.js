@@ -8,7 +8,7 @@ import BrandItems from './BrandItem'
 
 export default React.memo(function Filters() {
 
-    const {Filters, Filter} = useAppSelector(state => state.filters)
+    const {Filters, setFilter} = useAppSelector(state => state.filters)
     const dispatch = useAppDispatch();
 
     const [open, setOpen] = useState<string>('')
@@ -41,7 +41,7 @@ export default React.memo(function Filters() {
                 {Filters.brand?.map((brand) => <BrandItems {...brand} key={brand.id}/>)}
             </div>
         </div>
-        <div onClick={() => dispatch(changeFilter({typeId: '', brandId: '', page: Filter.page}))} className="filter">
+        <div onClick={() => dispatch(changeFilter({typeId: '', brandId: '', page: setFilter.page}))} className="filter">
             <div className="filter-btn">
                 RESET FILTERS
             </div>
